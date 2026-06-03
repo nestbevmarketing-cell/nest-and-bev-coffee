@@ -1,0 +1,254 @@
+/* Reset and Base Styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Georgia', serif; /* Gives a more classic, artisan feel */
+    line-height: 1.6;
+    background-color: #faf6f0; /* Soft warm cream */
+    color: #3e2723; /* Deep espresso brown */
+}
+
+/* Header & Branding */
+header {
+    background: linear-gradient(135deg, #2b1810 0%, #4a2c1b 100%); /* Rich coffee gradients */
+    color: #fffde7;
+    padding: 70px 20px;
+    text-align: center;
+    border-bottom: 5px solid #d7ccc8;
+}
+
+.header-container {
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+.logo-placeholder {
+    width: 140px;
+    height: 140px;
+    background-color: rgba(255, 255, 255, 0.05);
+    border: 2px dashed #bcaaa4;
+    border-radius: 12px; /* Soft square layout */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0 auto 25px auto;
+}
+
+.logo-placeholder h2 {
+    font-size: 11px;
+    letter-spacing: 1.5px;
+    color: #d7ccc8;
+    font-family: 'Arial', sans-serif;
+}
+
+header h1 {
+    font-size: 2.6rem;
+    margin-bottom: 12px;
+    font-weight: normal;
+    letter-spacing: 1px;
+}
+
+.tagline {
+    font-size: 1.15rem;
+    color: #bcaaa4;
+    font-style: italic;
+}
+
+/* Main Layout */
+main {
+    max-width: 900px;
+    margin: 50px auto;
+    padding: 0 20px;
+}
+
+section {
+    background: #ffffff;
+    padding: 45px;
+    margin-bottom: 35px;
+    border-radius: 6px;
+    box-shadow: 0 4px 15px rgba(62, 39, 35, 0.04);
+    border: 1px solid #efebe9;
+}
+
+h2 {
+    color: #4a2c1b;
+    margin-bottom: 15px;
+    font-size: 1.9rem;
+    font-weight: normal;
+}
+
+.divider {
+    height: 3px;
+    width: 50px;
+    background-color: #8d6e63; /* Roasted coffee brown accent */
+    margin-bottom: 25px;
+}
+
+p {
+    margin-bottom: 20px;
+    color: #5d4037;
+    font-size: 1.1rem;
+    font-family: 'Arial', sans-serif; /* Clean body text for readability */
+}
+
+strong {
+    color: #2b1810;
+}
+
+/* Profiles Grid */
+.profile-grid {
+    display: flex;
+    gap: 25px;
+    margin-top: 25px;
+}
+
+.profile-card {
+    flex: 1;
+    background-color: #fdfbf7;
+    padding: 30px;
+    border-top: 4px solid #8d6e63;
+    border-radius: 4px;
+    box-shadow: inset 0 0 10px rgba(0,0,0,0.01);
+}
+
+.profile-card h3 {
+    color: #4a2c1b;
+    margin-bottom: 12px;
+    font-size: 1.4rem;
+}
+
+/* Footer */
+footer {
+    text-align: center;
+    padding: 40px 20px;
+    color: #8d6e63;
+    font-size: 0.9rem;
+    background-color: #f5f0eb;
+    border-top: 1px solid #efebe9;
+    font-family: 'Arial', sans-serif;
+}
+
+/* Mobile Responsive */
+@media (max-width: 600px) {
+    .profile-grid {
+        flex-direction: column;
+    }
+}/* Navigation Link */
+.main-nav {
+    max-width: 1000px;
+    margin: 20px auto 0 auto;
+    padding: 0 20px;
+}
+.main-nav a {
+    color: #8d6e63;
+    text-decoration: none;
+    font-family: 'Arial', sans-serif;
+    font-weight: bold;
+}
+.main-nav a:hover {
+    color: #4a2c1b;
+}
+
+/* Product Page Layout */
+.product-main {
+    max-width: 1000px;
+    margin: 30px auto;
+}
+
+.product-container {
+    display: flex;
+    gap: 40px;
+    align-items: flex-start;
+}
+
+.product-image-side {
+    flex: 1;
+}
+
+.image-box {
+    background-color: #fdfbf7;
+    border: 1px solid #efebe9;
+    border-radius: 8px;
+    padding: 20px;
+    text-align: center;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.02);
+}
+
+.responsive-img {
+    max-width: 100%;
+    height: auto;
+    border-radius: 6px;
+}
+
+.product-details-side {
+    flex: 1.2;
+}
+
+.product-badge {
+    background-color: #8d6e63;
+    color: white;
+    padding: 5px 12px;
+    font-size: 0.8rem;
+    text-transform: uppercase;
+    font-family: 'Arial', sans-serif;
+    font-weight: bold;
+    border-radius: 20px;
+    display: inline-block;
+    margin-bottom: 10px;
+}
+
+.product-price {
+    font-size: 1.3rem;
+    font-weight: bold;
+    color: #8d6e63;
+    margin-bottom: 20px;
+    font-family: 'Arial', sans-serif;
+}
+
+.product-details-side h3 {
+    color: #4a2c1b;
+    margin-top: 20px;
+    margin-bottom: 8px;
+    font-size: 1.3rem;
+}
+
+/* Specs Table Layout */
+.spec-table-container {
+    margin-top: 30px;
+    border-top: 1px solid #efebe9;
+    padding-top: 20px;
+}
+
+.spec-table-container h4 {
+    margin-bottom: 10px;
+    color: #4a2c1b;
+    font-family: 'Arial', sans-serif;
+}
+
+.spec-table {
+    width: 100%;
+    border-collapse: collapse;
+    font-family: 'Arial', sans-serif;
+    font-size: 0.95rem;
+}
+
+.spec-table td {
+    padding: 10px;
+    border-bottom: 1px solid #efebe9;
+}
+
+.spec-table td:first-child {
+    width: 35%;
+    color: #8d6e63;
+}
+
+/* Responsive view for phones */
+@media (max-width: 768px) {
+    .product-container {
+        flex-direction: column;
+    }
+}
