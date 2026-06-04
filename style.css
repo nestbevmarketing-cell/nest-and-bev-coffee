@@ -251,4 +251,181 @@ footer {
     .product-container {
         flex-direction: column;
     }
+}/* --- CINEMATIC INTRO SCREEN STYLES --- */
+#intro-screen {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(135deg, #4a3429 0%, #2b1e17 100%);
+    z-index: 99999; /* Keeps it on top of everything else */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-family: 'Poppins', sans-serif;
+    color: #fff;
+    opacity: 1;
+    transition: opacity 1s ease, visibility 1s ease;
 }
+
+/* Smoothly fades out the entire overlay when dismissed */
+#intro-screen.fade-out {
+    opacity: 0;
+    visibility: hidden;
+    pointer-events: none;
+}
+
+.intro-content {
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    max-width: 600px;
+    padding: 20px;
+}
+
+.intro-welcome {
+    font-size: 1.2rem;
+    color: rgba(255, 255, 255, 0.6);
+    letter-spacing: 2px;
+    margin-bottom: 20px;
+    animation: fadeInDown 1s ease forwards;
+}
+
+.intro-owl-logo {
+    width: 110px;
+    height: auto;
+    margin-bottom: 25px;
+    animation: floatOwl 4s ease-in-out infinite;
+}
+
+/* Coffee Cup Graphic & Steam Setup */
+.coffee-container {
+    position: relative;
+    width: 120px;
+    height: 100px;
+    margin-bottom: 30px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.cup-wrapper {
+    position: relative;
+    margin-top: 35px;
+}
+
+.coffee-cup {
+    width: 70px;
+    height: 55px;
+    background-color: #1a4d32; /* Deep green matching your brand identity */
+    border-radius: 0 0 35px 35px;
+    border: 3px solid #e6ccb2;
+}
+
+.cup-handle {
+    position: absolute;
+    right: -18px;
+    top: 8px;
+    width: 20px;
+    height: 25px;
+    border: 3px solid #e6ccb2;
+    border-left: none;
+    border-radius: 0 15px 15px 0;
+}
+
+/* Rising Steam Animation Details */
+.steam-line {
+    position: absolute;
+    width: 4px;
+    height: 20px;
+    background: rgba(255, 255, 255, 0.4);
+    border-radius: 2px;
+    bottom: 65px;
+    filter: blur(1px);
+}
+.line1 { left: 45px; animation: riseSteam 2s infinite linear; }
+.line2 { left: 58px; animation: riseSteam 2s infinite linear 0.7s; }
+.line3 { left: 70px; animation: riseSteam 2s infinite linear 1.4s; }
+
+/* Text & Spinner Elements */
+.intro-title {
+    font-size: 2rem;
+    font-weight: 500;
+    margin-bottom: 15px;
+    letter-spacing: 1px;
+    color: #f7ebe1;
+}
+
+.loading-wrapper {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin-bottom: 40px;
+}
+
+.loading-text {
+    font-size: 1.3rem;
+    color: rgba(255, 255, 255, 0.7);
+}
+
+.loading-spinner {
+    width: 18px;
+    height: 18px;
+    border: 2px solid rgba(255, 255, 255, 0.2);
+    border-top-color: #e6ccb2;
+    border-radius: 50%;
+    animation: spin 1s infinite linear;
+}
+
+/* Rounded, Glowing Interactive Button */
+.skip-btn {
+    background: rgba(255, 255, 255, 0.9);
+    color: #2b1e17;
+    border: none;
+    padding: 12px 30px;
+    font-size: 0.95rem;
+    font-weight: 600;
+    border-radius: 25px;
+    cursor: pointer;
+    box-shadow: 0 0 15px rgba(230, 204, 178, 0.4);
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.skip-btn:hover {
+    transform: scale(1.05);
+    box-shadow: 0 0 25px rgba(230, 204, 178, 0.7);
+}
+
+/* Keyframe Animations */
+@keyframes spin { to { transform: rotate(360deg); } }
+
+@keyframes fadeInDown {
+    from { opacity: 0; transform: translateY(-15px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes floatOwl {
+    0%, 100% { transform: translateY(0); }
+    50% { transform: translateY(-8px); }
+}
+
+@keyframes riseSteam {
+    0% { transform: translateY(0) scaleY(0.5); opacity: 0; }
+    50% { opacity: 0.6; }
+    100% { transform: translateY(-25px) scaleY(1.5); opacity: 0; }
+}// --- CINEMATIC INTRO MANAGEMENT ---
+function dismissIntro() {
+    const intro = document.getElementById('intro-screen');
+    if (intro && !intro.classList.contains('fade-out')) {
+        intro.classList.add('fade-out');
+    }
+}
+
+// Automatically transition to the main page content after 4 seconds
+window.addEventListener('DOMContentLoaded', () => {
+    setTimeout(() => {
+        dismissIntro();
+    }, 4000); 
+});
